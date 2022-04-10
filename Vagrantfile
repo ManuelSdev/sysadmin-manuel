@@ -15,7 +15,7 @@ Vagrant.configure("2") do |config|
     wp.vm.network "forwarded_port", guest: 80, host: 8081
     wp.vm.provider "virtualbox" do |vb|
       vb.name = "wp"
-      wp.cpu='1'
+      vb.cpus='1'
       vb.memory = "1024"
       #mirar
       vb.default_nic_type = "virtio"
@@ -38,7 +38,7 @@ Vagrant.configure("2") do |config|
     el.vm.network "forwarded_port", guest: 80, host: 8080
     el.vm.provider "virtualbox" do |vb|
       vb.name = "el"
-      wp.cpu='1'
+      vb.cpus='1'
       vb.memory = "4096"
       vb.default_nic_type = "virtio"
       file_to_disk = "el.vmdk"
